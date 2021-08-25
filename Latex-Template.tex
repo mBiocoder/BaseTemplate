@@ -1,0 +1,83 @@
+\documentclass[12pt,a4paper,twoside]{article}
+
+\usepackage{graphicx}
+\usepackage{a4wide}            % A4 verwenden (und ausnutzen)
+\usepackage[utf8]{inputenc}
+\usepackage[ruled]{algorithm2e}  %algorithm2e package
+%\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{changepage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\newcommand\myeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily (IV)}}}{=}}}
+
+
+
+\headheight\baselineskip
+\topmargin-2cm
+\textheight47\baselineskip
+\def\MakeUppercase#1{#1}
+\makeatletter
+\makeatother
+
+\begin{document}
+
+\title{Title}
+\author{Author}
+\date{\today}
+\maketitle
+
+
+\section*{Random text}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat nisl, ornare varius ante sed, eleifend rhoncus turpis. Phasellus turpis odio, sagittis eget nunc vitae, luctus faucibus sapien. Cras sed sagittis leo. Maecenas eu nunc sem. Donec quis dolor id justo vulputate rhoncus sit amet in leo. Phasellus in convallis leo. Sed molestie augue ligula, a pretium augue posuere in.
+\subsection*{a) Pseudocode}
+\begin{algorithm}[H]
+\NoCaptionOfAlgo
+%\textbf{begin}\\
+\Begin{
+\SetAlgoVlined
+int i := 0, j := 0; \\
+ \While{$(i \leq n - m)$}{
+ \While{$(t[i + j] == s[j])$}{
+ j++;\\
+  \If{(j == m)}{
+  return TRUE; \hskip3cm  $\CommentSty{/* Pattern found*/}\\
+  }
+ }
+   i++;\\
+  j := 0; \\
+ }
+ return FALSE; \hskip3cm  $\CommentSty{/* Pattern not found*/}\\
+ }
+ %\textbf{end}\\  
+ \caption{\hskip0.3cm boolNaive(char t[], int n, char s[], int m)}
+\end{algorithm}
+\\ \\ 
+
+\section*{Aligning and equations}
+Aligning:\\
+\begin{align*}
+&4 \cdot 1 + 4 \cdot 2 + 4 \cdot 3 + 4 \cdot 4 + ... + 4 \cdot d \\
+&= 4 \cdot (1 + 2 + 3 + 4 + ... + d) \\
+&= 4 \cdot \sum_{i=0}^d i \\
+&= 4 \cdot \frac{d^2+d}{2} \\
+&= 2 \cdot (d^2 + d) \\
+\end{align*}
+
+
+Equation:\\
+\begin{equation*}
+1 + 1 = 2
+\end{equation*}
+
+\subsection*{b)}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=9cm]{Blah.png}
+\caption{Blah}
+\label{Blah}
+\end{center}
+\end{figure}
+
+\end{document}
+
